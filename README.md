@@ -48,6 +48,9 @@ var template = [
 // Template is an array that contains the initial map
 // E.g. [true, false, true, true, false, true, ...]
 var myGame = new GameOfLife(width, height, template);
+
+// Print current map (Same as template because no calculations be done)
+console.log(myGame.map);
 ```
 
 As you saw you are allowed to give three arguments. All three are optional, if `width` and `height` are not given, the default value is `8` for both of them.

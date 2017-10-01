@@ -1,14 +1,21 @@
 {
 	"name": "life-game",
-	"version": "1.0.0",
-	"description": "A game of life",
+	"version": "1.0.75",
+	"description": "A Node.js implementation of Conway's Game of Life",
 	"keywords": [
 		"gameoflife"
 	],
 	"license": "ISC",
 	"author": "Maurice Conrad",
 	"main": "game.js",
+	"bin": {
+		"life-game": "demo/cli/cli.js"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"command-line-args": "^4.0.7",
+		"fs-extra": "^4.0.2"
 	}
 }

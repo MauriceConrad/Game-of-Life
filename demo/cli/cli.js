@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
 const GameOfLife = require('../../');
 const render = require('./render-text');
