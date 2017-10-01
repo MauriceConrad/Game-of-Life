@@ -1,0 +1,14 @@
+{
+	"name": "life-game",
+	"version": "1.0.0",
+	"description": "A game of life",
+	"keywords": [
+		"gameoflife"
+	],
+	"license": "ISC",
+	"author": "Maurice Conrad",
+	"main": "game.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	}
+}

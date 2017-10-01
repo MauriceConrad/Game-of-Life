@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <meta name="viewport" content="initial-scale=1,user-scalable=0">
+    <script type="text/javascript" src="js/gameOfLife/bundle.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <header class="bar">
+        <div class="bar-actions buttons-left">
+          <button class="btn-randomize">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 36.71875 5.28125 L 35.28125 6.71875 L 38.5625 10 L 32.5625 10 C 30.625 10 28.847656 11.148438 28.03125 12.90625 L 24.3125 20.84375 L 25.4375 23.21875 L 29.84375 13.75 C 30.332031 12.695313 31.398438 12 32.5625 12 L 38.5625 12 L 35.28125 15.28125 L 36.71875 16.71875 L 41.71875 11.71875 L 42.40625 11 L 41.71875 10.28125 Z M 8 10 L 8 12 L 14.4375 12 C 15.609375 12 16.664063 12.6875 17.15625 13.75 L 28.03125 37.09375 C 28.851563 38.855469 30.617188 40 32.5625 40 L 38.5625 40 L 35.28125 43.28125 L 36.71875 44.71875 L 41.71875 39.71875 L 42.40625 39 L 41.71875 38.28125 L 36.71875 33.28125 L 35.28125 34.71875 L 38.5625 38 L 32.5625 38 C 31.390625 38 30.335938 37.3125 29.84375 36.25 L 18.96875 12.90625 C 18.148438 11.144531 16.382813 10 14.4375 10 Z M 21.5625 26.78125 L 17.15625 36.25 C 16.667969 37.304688 15.601563 38 14.4375 38 L 8 38 L 8 40 L 14.4375 40 C 16.375 40 18.152344 38.851563 18.96875 37.09375 L 22.6875 29.15625 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Random</span>
+          </button>
+          <button class="btn-export">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 2 -0.03125 C 1.425781 -0.03125 0.96875 0.425781 0.96875 1 L 0.96875 49 C 0.96875 49.574219 1.425781 50.03125 2 50.03125 L 32 50.03125 C 32.574219 50.03125 33.03125 49.574219 33.03125 49 L 33.03125 26 L 18.40625 26 L 25.59375 33.1875 C 25.984375 33.578125 25.984375 34.203125 25.59375 34.59375 C 25.398438 34.789063 25.132813 34.90625 24.875 34.90625 C 24.617188 34.90625 24.382813 34.789063 24.1875 34.59375 L 14.59375 25 L 24.1875 15.40625 C 24.578125 15.015625 25.203125 15.015625 25.59375 15.40625 C 25.984375 15.796875 25.984375 16.421875 25.59375 16.8125 L 18.40625 24 L 33.03125 24 L 33.03125 1 C 33.03125 0.425781 32.574219 -0.03125 32 -0.03125 Z M 33.03125 24 L 33.03125 26 L 48 26 C 48.554688 26 49 25.550781 49 25 C 49 24.449219 48.554688 24 48 24 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Save</span>
+          </button>
+        </div>
+        <h1>Game of Life</h1>
+        <div class="bar-actions buttons-right">
+          <button class="btn-open-file">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 30.398438 2 L 7 2 L 7 48 L 43 48 L 43 14.601563 Z M 30 15 L 30 4.398438 L 40.601563 15 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Open file</span>
+            <input type="file" class="files-input" />
+          </button>
+          <button class="btn-info">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 12 2 C 6.476563 2 2 6.476563 2 12 C 2 17.523438 6.476563 22 12 22 C 17.523438 22 22 17.523438 22 12 C 22 6.476563 17.523438 2 12 2 Z M 13 17 L 11 17 L 11 11 L 13 11 Z M 13 9 L 11 9 L 11 7 L 13 7 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Info</span>
+          </button>
+        </div>
+      </header>
+      <progress class="progress-indicator" value="0" max="1" min="0"></progress>
+      <main>
+        <div class="game">
+          <canvas></canvas>
+        </div>
+        <div class="time-range">
+          <input type="range" class="time-slider" min="0" max="0" value="0">
+        </div>
+      </main>
+      <footer class="bar">
+        <div class="bar-actions">
+          <input type="number" class="input-bounding-width" value="16">
+          <span class="label-input">×</span>
+          <input type="number" class="input-bounding-height" value="16">
+        </div>
+        <div class="state-text">
+          Level 0
+        </div>
+        <div class="btn-play-pause pause">
+          <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" version="1.1" width="100%" height="100%">
+            <g id="surface1">
+              <path style="fill: #ffb450;" d="M 7 5 L 7 19 L 19 12 Z "></path>
+            </g>
+          </svg>
+          <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" version="1.1" width="100%" height="100%">
+            <g id="surface1">
+              <path style="fill: #ffb450;" d="M 5 5 L 5 19 L 10 19 L 10 5 Z M 14 5 L 14 19 L 19 19 L 19 5 Z "></path>
+            </g>
+          </svg>
+        </div>
+        <div class="bar-actions">
+          <input type="number" class="input-cycles-count" value="10">
+          <button class="btn-create-cycles">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 44.25 1 C 43.039063 1 41.859375 1.496094 40.9375 2.40625 L 40.90625 2.40625 L 39.5 3.78125 L 33.25 10.03125 L 2.96875 10.03125 C 2.414063 10.03125 1.96875 10.480469 1.96875 11.03125 L 1.96875 47.03125 C 1.96875 47.582031 2.414063 48.03125 2.96875 48.03125 L 38.96875 48.03125 C 39.523438 48.03125 39.96875 47.582031 39.96875 47.03125 L 39.96875 16.75 L 46.28125 10.4375 C 46.320313 10.398438 46.371094 10.347656 46.4375 10.28125 C 46.566406 10.152344 46.730469 9.988281 46.90625 9.8125 C 47.253906 9.464844 47.59375 9.09375 47.59375 9.09375 C 49.441406 7.246094 49.46875 4.25 47.625 2.40625 L 47.625 2.375 C 46.699219 1.453125 45.46875 1 44.25 1 Z M 44.25 3 C 44.949219 3 45.644531 3.269531 46.1875 3.8125 C 47.261719 4.886719 47.25 6.574219 46.1875 7.65625 L 42.34375 3.8125 C 42.882813 3.285156 43.558594 3 44.25 3 Z M 40.90625 5.1875 L 44.8125 9.09375 L 22.21875 31.65625 L 18.34375 27.78125 Z M 16.9375 29.21875 L 20.78125 33.0625 L 15.96875 34.03125 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Generate</span>
+          </button>
+        </div>
+      </footer>
+    </div>
+    <div class="dialogs">
+      <div class="dialog dialog-export">
+        <div class="dialog-top">
+          <div class="title">
+            Save as
+          </div>
+          <button class="btn-close-dialog">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" version="1.1" width="100%" height="100%">
+              <g id="surface1">
+                <path d="M 3.726563 3.023438 L 3.023438 3.726563 L 7.292969 8 L 3.023438 12.269531 L 3.726563 12.980469 L 8 8.707031 L 12.269531 12.980469 L 12.980469 12.269531 L 8.707031 8 L 12.980469 3.726563 L 12.269531 3.023438 L 8 7.292969 Z "></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div class="dialog-content">
+          <div class="btn-group select-export-type">
+            <button class="btn-export-all active" data-view=".view-menu-export-all" data-export-type="all">All cycles</button>
+            <button class="btn-export-single" data-view=".view-menu-export-single" data-export-type="single">Single cycle</button>
+          </div>
+          <div class="view view-menu-export-all show">
+
+          </div>
+          <div class="view view-menu-export-single">
+            <input type="number" value="0" min="1" class="input-export-cycle">
+          </div>
+          <br><br>
+          <button class="btn-export-default">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 28.605469 30.21875 C 28.605469 33.035156 28.007813 34.714844 27.003906 34.714844 C 25.957031 34.714844 25.332031 33.046875 25.332031 30.253906 C 25.332031 29.210938 25.449219 25.796875 26.984375 25.796875 C 28.488281 25.796875 28.605469 29.183594 28.605469 30.21875 Z M 44 14.601563 L 44 50 L 6 50 L 6 0 L 29.398438 0 Z M 14.671875 24.277344 L 12.863281 24.277344 L 12.863281 32.769531 C 12.863281 34.566406 12.304688 34.714844 11.632813 34.714844 C 11.394531 34.714844 11.203125 34.695313 11.074219 34.65625 L 10.789063 34.570313 L 10.617188 36.164063 L 10.796875 36.234375 C 11.03125 36.324219 11.347656 36.367188 11.734375 36.367188 C 13.738281 36.367188 14.671875 35.222656 14.671875 32.753906 Z M 22.050781 32.875 C 22.050781 31.488281 21.382813 30.378906 19.957031 29.371094 C 18.835938 28.5625 18.378906 28.199219 18.378906 27.210938 C 18.378906 26.546875 18.820313 25.832031 19.792969 25.832031 C 20.449219 25.832031 20.863281 26.074219 21.007813 26.175781 L 21.300781 26.382813 L 21.746094 24.753906 L 21.609375 24.648438 C 21.292969 24.414063 20.632813 24.175781 19.859375 24.175781 C 17.933594 24.175781 16.585938 25.515625 16.585938 27.433594 C 16.585938 28.648438 17.347656 29.785156 18.84375 30.8125 C 19.738281 31.488281 20.257813 32.058594 20.257813 32.992188 C 20.257813 34.03125 19.617188 34.679688 18.585938 34.679688 C 18.09375 34.679688 17.4375 34.496094 17.097656 34.265625 L 16.800781 34.0625 L 16.382813 35.695313 L 16.519531 35.796875 C 16.878906 36.0625 17.753906 36.335938 18.585938 36.335938 C 20.625 36.335938 22.050781 34.910156 22.050781 32.875 Z M 30.464844 30.171875 C 30.464844 26.394531 29.199219 24.140625 27.085938 24.140625 C 24.855469 24.140625 23.472656 26.476563 23.472656 30.238281 C 23.472656 34.078125 24.753906 36.367188 26.898438 36.367188 C 28.230469 36.367188 30.464844 35.5625 30.464844 30.171875 Z M 38.742188 24.277344 L 37.070313 24.277344 L 37.070313 28.621094 C 37.070313 29.925781 37.089844 31.039063 37.140625 32.261719 C 36.894531 31.585938 36.628906 30.894531 36.382813 30.253906 L 34.039063 24.277344 L 32.394531 24.277344 L 32.394531 36.234375 L 34.066406 36.234375 L 34.066406 32.023438 C 34.066406 30.492188 34.054688 29.363281 34.019531 28.371094 C 34.261719 29.066406 34.539063 29.789063 34.859375 30.566406 L 37.097656 36.234375 L 38.742188 36.234375 Z M 41.601563 15 L 29 2.398438 L 29 15 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">JSON</span>
+          </button>
+          <button class="btn-export-binary">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="100%" height="100%">
+                <g id="surface1">
+                  <path style=" " d="M 7 2 L 7 48 L 43 48 L 43 14.597656 L 30.402344 2 Z M 30 4.398438 L 40.597656 15 L 30 15 Z M 14 20 L 17 20 L 17 29 L 15 29 L 15 22 L 14 22 Z M 23.5 20 C 25.429688 20 27 21.570313 27 23.5 L 27 25.5 C 27 27.429688 25.429688 29 23.5 29 C 21.570313 29 20 27.429688 20 25.5 L 20 23.5 C 20 21.570313 21.570313 20 23.5 20 Z M 32.5 20 C 34.429688 20 36 21.570313 36 23.5 L 36 25.5 C 36 27.429688 34.429688 29 32.5 29 C 30.570313 29 29 27.429688 29 25.5 L 29 23.5 C 29 21.570313 30.570313 20 32.5 20 Z M 23.5 22 C 22.671875 22 22 22.671875 22 23.5 L 22 25.5 C 22 26.328125 22.671875 27 23.5 27 C 24.328125 27 25 26.328125 25 25.5 L 25 23.5 C 25 22.671875 24.328125 22 23.5 22 Z M 32.5 22 C 31.671875 22 31 22.671875 31 23.5 L 31 25.5 C 31 26.328125 31.671875 27 32.5 27 C 33.328125 27 34 26.328125 34 25.5 L 34 23.5 C 34 22.671875 33.328125 22 32.5 22 Z M 17.5 33 C 19.429688 33 21 34.570313 21 36.5 L 21 38.5 C 21 40.429688 19.429688 42 17.5 42 C 15.570313 42 14 40.429688 14 38.5 L 14 36.5 C 14 34.570313 15.570313 33 17.5 33 Z M 26.5 33 C 28.429688 33 30 34.570313 30 36.5 L 30 38.5 C 30 40.429688 28.429688 42 26.5 42 C 24.570313 42 23 40.429688 23 38.5 L 23 36.5 C 23 34.570313 24.570313 33 26.5 33 Z M 32 33 L 35 33 L 35 42 L 33 42 L 33 35 L 32 35 Z M 17.5 35 C 16.671875 35 16 35.671875 16 36.5 L 16 38.5 C 16 39.328125 16.671875 40 17.5 40 C 18.328125 40 19 39.328125 19 38.5 L 19 36.5 C 19 35.671875 18.328125 35 17.5 35 Z M 26.5 35 C 25.671875 35 25 35.671875 25 36.5 L 25 38.5 C 25 39.328125 25.671875 40 26.5 40 C 27.328125 40 28 39.328125 28 38.5 L 28 36.5 C 28 35.671875 27.328125 35 26.5 35 Z "></path>
+                </g>
+              </svg>
+            </div>
+            <span class="label">Binary</span>
+          </button>
+
+        </div>
+      </div>
+      <div class="dialog dialog-info">
+        <div class="dialog-top">
+          <div class="title">
+            Info
+          </div>
+          <button class="btn-close-dialog">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" version="1.1" width="100%" height="100%">
+              <g id="surface1">
+                <path d="M 3.726563 3.023438 L 3.023438 3.726563 L 7.292969 8 L 3.023438 12.269531 L 3.726563 12.980469 L 8 8.707031 L 12.269531 12.980469 L 12.980469 12.269531 L 8.707031 8 L 12.980469 3.726563 L 12.269531 3.023438 L 8 7.292969 Z "></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div class="dialog-content">
+          <h2>Define template</h2>
+          <p>
+            To define a temaplate, select your cycle with the timeline and edit every cell with clicking it.
+            <br>You can zoom into the map with your mouse's wheel or with an trackpad pinch gesture (macOS + Safari > 9.1).
+          </p>
+          <p>
+            To generate a random field, click the "Random" button in the top bar. This action deletes all your cycles except the first one (The one that will be generated randomly).
+          </p>
+          <h2>Generate Cycles</h2>
+          <p>
+            To generate a sepefic amount of cycles, click the "Generate" button within the bottom bar.
+            <br>The template map will be the current selected cycle selected in timeline. If you already generated 10 cycles for your template and the timeline points on the last cycle, a new generate action will use this last cycle as template.
+            <br>To edit a cycle just click on its cells.
+          </p>
+          <h2>Open File</h2>
+          <p>To open a file, use the button "Open File" within the top bar.</p>
+          <p>You can select a binary file (You can export such a file with using the CLI version or the module of <i>life-game</i>) or a simple JSON file you got from exporting</p>
+          <p>You can also select a JSON file. Please keep the following in mind. If the JSON file is just containing one cycle instead, this cycles will be used. If the JSON file is containing multiple cycles, the first one will be used.</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
